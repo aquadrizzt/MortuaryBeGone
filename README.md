@@ -7,13 +7,11 @@ The Mortuary serves as the tutorial sequence of Planescape: Torment. While it ca
 
 This mod (inspired by the Dungeon-Be-Gone and Skip Chateau Irenicus mods for Baldur's Gate 2) allows Morte to whisk you through a portal at the very start of the game while still providing the items and experience you'd gain from a thorough exploration of the Mortuary. Narratively, you are implied to have done a "normal" playthrough of the Mortuary in your previous incarnation, who died shortly (and relatively non-traumatically) after escaping the Mortuary. 
 
-This mod makes a few assumptions about your previous incarnation's decisions within the Mortuary. The Nameless One and Morte will each receive 4,000 XP for the completion of various objectives within the Mortuary, as well as 200 copper commons and every useful item that you can get from the Mortuary without harming any NPC. 
+This mod makes a few assumptions about your previous incarnation's decisions within the Mortuary. As the Mortuary is still accessible after escaping from it, I have minimized the impact that you could have had while still completing secondary objectives. You are assumed to have looted every container, avoided combat and detection wherever possible, completed every available side quest, and not taken any actions that would influence your alignment. The Nameless One and Morte will each receive 4,000 XP. The party will receive 200 copper commons and every useful item that you can get from the Mortuary without harming any NPC. 
 <details> 
 <summary> <b>Mortuary Spoilers</b></summary>
-  
-- You looted every container in the Mortuary.
+
 - You did not fight any NPCs except Zombie 782.
-- You did not take any actions that affected your alignment
 - You met Dhall and discussed both Dustmen philosophy and his knowledge of Pharod. 
 - You met Ei-Vene, retrieved the Embalming Fluid and Needle, and allowed her to stitch up your scars.
 - You met Vaxis, gave him the Embalming Room Key, but did not ask him to disguise you as a zombie. 
