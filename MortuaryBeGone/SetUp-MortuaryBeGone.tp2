@@ -1,0 +1,224 @@
+BACKUP ~weidu_external/backup/MortuaryBeGone~
+SUPPORT ~https://github.com/aquadrizzt/~
+VERSION ~0.01~
+
+/* Language Settings */
+LANGUAGE ~English~ ~english~ ~MortuaryBeGone/english.tra~
+
+BEGIN @0
+REQUIRE_PREDICATE GAME_IS ~pstee~ @100 //This mod is for Planescape: Enhanced Edition only.
+
+COPY_EXISTING ~aclue.itm~ ~override/qd_pst_mortuary_be_gone.qd~ //check file for this component 
+
+<<<<<<<< QD/MBG/morte_dlg.d
+
+	APPEND DMORTE1 
+
+		IF ~~ THEN BEGIN qd_morte_mbg
+			SAY @1 
+			IF ~~ DO ~SetGlobal("QD_SKIP_MORTUARY","GLOBAL",1) PlaySound("AM_VORTX") TeleportParty("AR0206",[550.524],3)~ EXIT 
+
+		END 
+	END 
+	
+	EXTEND_BOTTOM DMORTE1 0 #1
+		++ @2 DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE)~ + qd_morte_mbg  
+	END 
+>>>>>>>>
+
+COMPILE ~QD/MBG/morte_dlg.d~
+
+<<<<<<<< QD/MBG/ar0206_cutscene.baf
+	IF
+		Global("QD_SKIP_MORTUARY","GLOBAL",1)
+	THEN
+		RESPONSE #100
+			SetGlobal("QD_SKIP_MORTUARY","GLOBAL",2)
+			CreateVisualEffectObject("EF01TPRT",Player1)
+			CreateVisualEffectObject("EF01TPRT",Player2)
+			GiveExperience(Protagonist,4000)
+			GiveExperience("morte",4000)
+			SmallWait(2)
+			AddJournalEntry(39516,USER)
+			AddJournalEntry(39477,USER)
+			AddJournalEntry(39459,USER)
+			AddJournalEntry(39462,USER)
+			AddJournalEntry(39470,USER)
+			AddJournalEntry(39463,USER)
+			AddJournalEntry(39464,USER)
+			AddJournalEntry(39460,USER)
+			AddJournalEntry(39461,USER)
+			AddJournalEntry(38205,USER)
+			AddJournalEntry(37702,USER)
+			AddJournalEntry(64513,USER)
+			AddJournalEntry(64512,USER)
+			AddJournalEntry(64519,USER)
+			AddJournalEntry(61612,USER)
+			AddJournalEntry(38203,USER)
+			AddJournalEntry(38202,USER)
+			AddJournalEntry(38199,USER)
+			AddJournalEntry(64521,USER)
+			AddJournalEntry(64528,USER)
+			AddJournalEntry(64522,USER)
+			AddJournalEntry(64537,USER)
+			AddJournalEntry(64531,USER)
+			AddJournalEntry(66917,USER)
+			AddJournalEntry(26087,USER)
+			AddJournalEntry(63982,USER)
+			SetGlobal("0201GD1","GLOBAL",1)
+			SetGlobal("0202_DOORA_OPENED","GLOBAL",1)
+			SetGlobal("0202_DOORB_OPENED","GLOBAL",1)
+			SetGlobal("1201_NOTE","GLOBAL",2)
+			SetGlobal("1201_NOTE_RETRIEVED","GLOBAL",1)
+			SetGlobal("42_SECRET","GLOBAL",1)
+			SetGlobal("506_THREAD","GLOBAL",1)
+			SetGlobal("APPEARANCE","GLOBAL",0)
+			SetGlobal("AR0201_VISITED","GLOBAL",1)
+			SetGlobal("AR0202_VISITED","GLOBAL",1)
+			SetGlobal("AR0203_VISITED","GLOBAL",1)
+			SetGlobal("BESTIARY_KNOWN_14","GLOBAL",1)
+			SetGlobal("BESTIARY_KNOWN_15","GLOBAL",1)
+			SetGlobal("BESTIARY_KNOWN_19","GLOBAL",1)
+			SetGlobal("BESTIARY_KNOWN_52","GLOBAL",1)
+			SetGlobal("BESTIARY_KNOWN_54","GLOBAL",1)
+			SetGlobal("BESTIARY_KNOWN_65","GLOBAL",1)
+			SetGlobal("BESTIARY_KNOWN_83","GLOBAL",1)
+			SetGlobal("DEAD_TRUCE","GLOBAL",0)
+			SetGlobal("DEIONARRA","GLOBAL",1)
+			SetGlobal("DEIONARRA_PORTAL","GLOBAL",1)
+			SetGlobal("DEIONARRA_RAISE_DEAD","GLOBAL",1)
+			SetGlobal("DEIO_WAKE_UP","GLOBAL",0)
+			SetGlobal("DHALL","GLOBAL",1)
+			SetGlobal("EIVENE","GLOBAL",1)
+			SetGlobal("EIVENE_DELIVERY","GLOBAL",1)
+			SetGlobal("EMBALM_KEY_QUEST","GLOBAL",3)
+			SetGlobal("GATE_OPEN","GLOBAL",1)
+			SetGlobal("GIANT_SKELETON_ENCHANT","GLOBAL",4)
+			SetGlobal("KNOW_COPPER_EARRING_SECRET","GLOBAL",1)
+			SetGlobal("KNOW_DUSTMEN","GLOBAL",1)
+			SetGlobal("LR_1201","GLOBAL",1)
+			SetGlobal("MORTE_MORTUARY_WALKTHROUGH_1","GLOBAL",1)
+			SetGlobal("MORTE_MORTUARY_WALKTHROUGH_2","GLOBAL",1)
+			SetGlobal("MORTE_QUIP","GLOBAL",1)
+			SetGlobal("MORTUARY_WALKTHROUGH","GLOBAL",4)
+			SetGlobal("NONE_DEAD_KAPUTZ","GLOBAL",4)
+			SetGlobal("PAGE_TAKEN","GLOBAL",1)
+			SetGlobal("PREGNANT_QUEST","GLOBAL",0)
+			SetGlobal("PROPHECY","GLOBAL",1)
+			SetGlobal("RAVEL_EIVENE","GLOBAL",1)
+			SetGlobal("S42_DEAD_KAPUTZ","GLOBAL",1)
+			SetGlobal("SKELETON_EXAMINE","GLOBAL",1)
+			SetGlobal("SOEGO","GLOBAL",1)
+			SetGlobal("TOPPLE_985","GLOBAL",1)
+			SetGlobal("UR_1201","GLOBAL",1)
+			SetGlobal("VAXIS","GLOBAL",1)
+			SetGlobal("VAXIS_HELP","GLOBAL",1)
+			SetGlobal("ZM782_DEAD_KAPUTZ","GLOBAL",1)
+			GivePartyGold(200) 
+			GiveItemCreate("copearo",Protagonist,0,0,0)
+			GiveItemCreate("tearring",Protagonist,0,0,0)
+			GiveItemCreate("embchrm",Protagonist,3,0,0)
+			GiveItemCreate("scalpel",Protagonist,0,0,0)
+			GiveItemCreate("fistiron",Protagonist,0,0,0)
+			GiveItemCreate("limb985",Protagonist,0,0,0)
+			GiveItemCreate("prybar",Protagonist,0,0,0)
+			GiveItemCreate("gsknife",Protagonist,0,0,0)
+			GiveItemCreate("club",Protagonist,0,0,0)
+			GiveItemCreate("ax2",Protagonist,0,0,0)
+			GiveItemCreate("hammer",Protagonist,0,0,0)
+			GiveItemCreate("tomeba",Protagonist,0,0,0)
+			GiveItemCreate("breast1",Protagonist,0,0,0)
+			GiveItemCreate("breast2","Morte",0,0,0)
+			GiveItemCreate("breast3","Morte",0,0,0)
+			GiveItemCreate("breast4","Morte",0,0,0)
+			GiveItemCreate("bandage",Protagonist,7,0,0)
+			GiveItemCreate("clot",Protagonist,5,0,0)
+			GiveItemCreate("needle",Protagonist,2,0,0)
+			GiveItemCreate("cflychrm","Morte",1,0,0)
+			GiveItemCreate("charchrm","Morte",1,0,0)
+			GiveItemCreate("bonechrm","Morte",1,0,0)
+			GiveItemCreate("embalm","Morte",1,0,0)
+			GiveItemCreate("junk","Morte",2,0,0)
+			
+			Wait(1)
+			StartMovie("ss_mslab")
+			Continue()
+	END
+>>>>>>>>
+
+EXTEND_TOP ~ar0206.bcs~ ~QD/MBG/ar0206_cutscene.baf~ 
+
+
+<<<<<<<< QD/MBG/ar0201.baf
+	IF
+		Global("QD_SKIP_MORTUARY","GLOBAL",2)
+		Global("QD_SKIP_MORTUARY_201","GLOBAL",0)
+	THEN
+		RESPONSE #100
+			SetGlobal("QD_SKIP_MORTUARY_201","GLOBAL",1)
+			ActionOverride("ZM732",DestroyItem("tomeba"))
+			ContainerEnable("Wall of Weapons",FALSE)
+			Explore()
+			Continue()
+	END
+>>>>>>>>
+
+EXTEND_TOP ~ar0201.bcs~ ~QD/MBG/ar0201.baf~ 
+
+<<<<<<<< QD/MBG/0201gskl.baf
+	IF
+		Global("QD_SKIP_MORTUARY","GLOBAL",2)
+	THEN
+		RESPONSE #100
+			DestroySelf()
+			Continue()
+	END
+>>>>>>>>
+
+EXTEND_TOP ~0201gskl.bcs~ ~QD/MBG/0201gskl.baf~ 
+
+<<<<<<<< QD/MBG/ar0202.baf
+	IF
+		Global("QD_SKIP_MORTUARY","GLOBAL",2)
+		Global("QD_SKIP_MORTUARY_202","GLOBAL",0)
+	THEN
+		RESPONSE #100
+			SetGlobal("QD_SKIP_MORTUARY_202","GLOBAL",1)
+			Explore()
+			Kill("ZM782")
+			SetDoorLocked("ar202d1",FALSE)
+			OpenDoor("ar202d1")
+			SetDoorLocked("ar202d2",FALSE)
+			OpenDoor("ar202d2")
+			SetDoorLocked("ar202d4",FALSE)
+			OpenDoor("ar202d2")
+			SetDoorLocked("ar202d5",FALSE)
+			SetDoorLocked("ar202d10",FALSE)
+			ContainerEnable("Container 22",FALSE)
+			Continue()
+	END
+>>>>>>>>
+
+EXTEND_TOP ~ar0202.bcs~ ~QD/MBG/ar0202.baf~ 
+
+<<<<<<<< QD/MBG/ar0203.baf
+	IF
+		Global("QD_SKIP_MORTUARY","GLOBAL",2)
+		Global("QD_SKIP_MORTUARY_203","GLOBAL",0)
+	THEN
+		RESPONSE #100
+			SetGlobal("QD_SKIP_MORTUARY_203","GLOBAL",1)
+			Explore()
+			Kill("S42")
+			SetDoorLocked("ar203d1",FALSE)
+			SetDoorLocked("ar203d2",FALSE)
+			Continue()
+	END
+>>>>>>>>
+
+EXTEND_TOP ~ar0203.bcs~ ~QD/MBG/ar0203.baf~ 
+
+COPY_EXISTING ~ar202d1.bcs~ ~override~
+	DECOMPILE_AND_PATCH BEGIN 
+		REPLACE_TEXTUALLY ~HarmlessOpened(~ ~GlobalLT("Mortuary_Walkthrough","GLOBAL",1) HarmlessOpened(~
+	END 
