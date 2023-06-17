@@ -7,7 +7,8 @@ The Mortuary serves as the tutorial sequence of Planescape: Torment. While it ca
 
 This mod (inspired by the Dungeon-Be-Gone and Skip Chateau Irenicus mods for Baldur's Gate 2) allows Morte to whisk you through a portal at the very start of the game while still providing the items and experience you'd gain from a thorough exploration of the Mortuary. Narratively, you are implied to have done a "normal" playthrough of the Mortuary in your previous incarnation, who died shortly (and relatively non-traumatically) after escaping the Mortuary. 
 
-This mod makes a few assumptions about your previous incarnation's decisions within the Mortuary. As the Mortuary is still accessible after escaping from it, I have minimized the impact that you could have had while still completing secondary objectives. You are assumed to have looted every container, avoided combat and detection wherever possible, completed every available side quest, and not taken any actions that would influence your alignment. 
+This mod makes a few assumptions about your previous incarnation's decisions within the Mortuary. As the Mortuary is still accessible after escaping from it, I have minimized the impact that you could have had while still completing secondary objectives. You are assumed to have looted every container, avoided combat and detection wherever possible, completed every available side quest, and not taken any actions that would influence your alignment. The Dustmen will have restocked any non-unique item should you return to the Mortuary later. 
+
 <details> 
 <summary> <b>Mortuary Spoilers</b></summary>
 
