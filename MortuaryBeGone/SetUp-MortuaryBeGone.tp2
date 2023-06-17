@@ -139,7 +139,10 @@ COMPILE ~QD/MBG/morte_dlg.d~
 			GiveItemCreate("bonechrm","Morte",1,0,0)
 			GiveItemCreate("embalm","Morte",1,0,0)
 			GiveItemCreate("junk","Morte",2,0,0)
-			
+			ApplySpell(Protagonist,SPECIAL_ADD_RAISE_DEAD)  
+			ApplySpell(Protagonist,SPECIAL_ADD_RAISE_DEAD) 
+			ApplySpell(Protagonist,SPECIAL_ADD_RAISE_DEAD)
+			PermanentStatChange(Protagonist,MAXHITPOINTS,RAISE,1)
 			Wait(1)
 			StartMovie("ss_mslab")
 			Continue()
