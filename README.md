@@ -2,6 +2,7 @@
 *A mod for PST:EE that lets players skip the tutorial sequence in the Mortuary*
 
 **Discussion**: [Beamdog Forums](https://forums.beamdog.com/discussion/87482/mod-mortuary-be-gone)
+**Languages**: English, Polish (translation by @memory)
 
 The Mortuary serves as the tutorial sequence of Planescape: Torment. While it can be a very impressive segment of the game during one's first playthrough, it can begin to feel like a tedious slog if you replay the game. 
 
